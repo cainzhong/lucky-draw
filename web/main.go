@@ -40,15 +40,9 @@ func main() {
 	app.StaticWeb("/public", "./web/public")
 
 	// Serve our controllers.
-	//mvc.New(app.Party("/hello")).Handle(new(controllers.HelloController))
-
 	mvc.New(app.Party("/home")).Handle(new(controllers.HomeController))
 
 	app.Post("/reward",apihandlers.StartLuckyDraw)
-
-	//app.Get("/home", apihandlers.GetIDMRequestTokenValidateIDMAccessToken, apihandlers.RouteRequestToNodejs)
-	//// start the lucky draw
-	//app.Post("/reward", apihandlers.ValidateIDMAccessToken, apihandlers.RefreshIDMAccessToken)
 
 	app.Run(iris.Addr(":8080"))
 }

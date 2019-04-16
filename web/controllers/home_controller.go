@@ -11,10 +11,10 @@ import (
 type HomeController struct{}
 
 var homeView = mvc.View{
-	Name: "hello.html",
+	Name: "index.html",
 	Data: map[string]interface{}{
-		"Title":     "Hello Page",
-		"MyMessage": "Welcome to my awesome website",
+		"Title":     "程序员美食大乐透",
+		"StartLuckyDraw": "开始抽奖",
 	},
 }
 
@@ -25,5 +25,5 @@ var homeView = mvc.View{
 // you can even create custom response dispatchers by
 // implementing the `github.com/kataras/iris/hero#Result` interface.
 func (c *HomeController) Get() mvc.Result {
-	return helloView
+	return homeView
 }

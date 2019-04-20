@@ -34,6 +34,7 @@ func init() {
 func main() {
 	app := iris.New()
 
+	app.Favicon("./web/public/favicon.ico")
 	// Load the template files.
 	app.RegisterView(iris.HTML("./web/views", ".html"))
 

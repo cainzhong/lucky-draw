@@ -3,7 +3,7 @@
         "group_list": [
                                                                                 {
                         "name": "未分组",
-                        "cnt": "31",
+                        "cnt": "33",
                         "create_time": "1552729425",
                         "id": "0"
                     }
@@ -22,6 +22,22 @@
                                                         ],
         "user_list": [
                                                                                 {
+                        "id": "oh4N71Plyh6J8gFrN2q99aXU7_L4",
+                        "nick_name": "CHI",
+                        "remark_name": "",
+                        "create_time": "1555758821",
+                        "group_id": [
+                                                                                ]
+                    }
+                                                        ,                    {
+                        "id": "oh4N71HcwiNasm5cjX-Wxt83bj78",
+                        "nick_name": "高兴",
+                        "remark_name": "",
+                        "create_time": "1555756954",
+                        "group_id": [
+                                                                                ]
+                    }
+                                                        ,                    {
                         "id": "oh4N71MKUj2xd4t1PP5cfQ5nVNPY",
                         "nick_name": "曉",
                         "remark_name": "",
@@ -165,23 +181,7 @@
                         "group_id": [
                                                                                 ]
                     }
-                                                        ,                    {
-                        "id": "oh4N71LcUMAdia1ch6njvT1jd-Wk",
-                        "nick_name": "博文",
-                        "remark_name": "",
-                        "create_time": "1554009382",
-                        "group_id": [
-                                                                                ]
-                    }
-                                                        ,                    {
-                        "id": "oh4N71MUcoVIHopOjjnD2Z7jTB7M",
-                        "nick_name": "袁笑笑",
-                        "remark_name": "",
-                        "create_time": "1554009294",
-                        "group_id": [
-                                                                                ]
-                    }
                                                         ],
-        "total_user_num": "31"
+        "total_user_num": "33"
     }
     

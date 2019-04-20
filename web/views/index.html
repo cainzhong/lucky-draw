@@ -88,10 +88,10 @@
     });
 
     let showAward = function (data) {
-        var txt = "恭喜你！ <span class='show-award-name'>" + data.NickName + "  " +
-            "<img style=\"-webkit-user-select: none;height: 60px\" src=\"http://localhost:8080/headImg?fakeid=" + data.Id + "\">" + "  </span> 中奖啦。 ";
+        var txt = "恭喜你！ <span class='show-award-name'><img style=\"-webkit-user-select: none;height: 60px\" src=\"http://localhost:8080/headImg?fakeid=" + data.Id + "\"> "
+            + data.NickName + "  </span> 中奖啦。 ";
         var option = {
-            title: "中奖啦",
+            title: "程序员美食大乐透",
             btn: parseInt("0011", 2),
             onOk: function () {
                 console.log(txt);

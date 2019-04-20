@@ -4,14 +4,20 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"lucky-drawn/internal/lucky-drawn/wechat"
+	"lucky-draw/internal/lucky-drawn/wechat"
 	"math/rand"
 	"time"
 )
 
+var jsonUsersFile = ""
+func init()  {
+	//Get original users info from wechat, then save it into "../wechat/users_original.txt"
+	filename := wechat.GetAllData();
+	jsonUsersFile = wechat.FormatUsersToJson(filename)
+}
+
 func GetAllUsers() wechat.Users {
-	filename := "../wechat/users.json"
-	usersByte, err := ioutil.ReadFile(filename)
+	usersByte, err := ioutil.ReadFile(jsonUsersFile)
 	users := wechat.Users{}
 	if err != nil {
 		panic(err)
@@ -20,7 +26,6 @@ func GetAllUsers() wechat.Users {
 		if err != nil {
 			panic(err)
 		}
-		//logger.Debug(fmt.Sprintf("%+v", users))
 	}
 	return users
 }

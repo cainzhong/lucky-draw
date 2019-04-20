@@ -18,7 +18,7 @@ func init() {
    	 "color": true
   	},
   	"File": {
-    	"filename": "./lucky-draw/lucky-draw.log",
+    	"filename": "C:/repositories/cainzhong/src/lucky-draw/lucky-draw.log",
     	"level": "INFO",
     	"daily": true,
     	"maxlines": 1000000,
@@ -43,7 +43,9 @@ func main() {
 	// Serve our controllers.
 	mvc.New(app.Party("/home")).Handle(new(controllers.HomeController))
 
-	app.Post("/reward",apihandlers.StartLuckyDraw)
+	app.Post("/reward", apihandlers.StartLuckyDraw)
+
+	app.Get("/headImg", apihandlers.GetHeadImg)
 
 	app.Run(iris.Addr(":8080"))
 }

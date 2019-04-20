@@ -4,18 +4,26 @@
     <meta charset=UTF-8/>
     <title>{{.Title}}</title>
     <link rel="stylesheet" href="/public/bootcss.css"/>
-    <link rel="icon" href="/public/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/public/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="/public/jq22pd/css/xcConfirm.css"/>
+    <script src="/public/jq22pd/js/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/public/jq22pd/js/xcConfirm.js" type="text/javascript" charset="utf-8"></script>
     <style type="text/css">
         .start-lucky-draw-btn {
             text-align: center;
             padding-top: 35px;
         }
+
+        .show-award-name {
+            font-size: 22px;
+            color: #FF4351;
+        }
     </style>
 </head>
 <body>
 <div class="start-lucky-draw-btn">
-    <a onmousedown="startLuckyDraw()" class="button button-glow button-rounded button-caution">{{.StartLuckyDraw}}</a>
+    <a class="button button-glow button-rounded button-caution">{{.StartLuckyDraw}}</a>
 </div>
 <div id="my_text" style="display:none">
     ◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇
@@ -63,11 +71,33 @@
         showMarquee(100, 100, text)
     }
 
-    function startLuckyDraw(){
-        let url = "http://localhost:8080/reward"
-        let request = new XMLHttpRequest();
-        request.open("POST", url);
-        request.send("")
+    $('.start-lucky-draw-btn').click(function () {
+        $.ajax({
+            url: 'http://localhost:8080/reward',
+            data: "",
+            type: 'POST',
+            success: function (data) {
+                data = JSON.parse(data);
+                console.log(data)
+                showAward(data);
+            },
+            error: function (data) {
+                alert(data);
+            }
+        });
+    });
+
+    let showAward = function (data) {
+        var txt = "恭喜你！ <span class='show-award-name'>" + data.NickName + "  " +
+            "<img style=\"-webkit-user-select: none;height: 60px\" src=\"http://localhost:8080/headImg?fakeid=" + data.Id + "\">" + "  </span> 中奖啦。 ";
+        var option = {
+            title: "中奖啦",
+            btn: parseInt("0011", 2),
+            onOk: function () {
+                console.log(txt);
+            }
+        }
+        window.wxc.xcConfirm(txt, "custom", option);
     }
 </script>
 </html>

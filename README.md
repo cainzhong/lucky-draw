@@ -1,4 +1,4 @@
-# lucky-drawn
+# lucky-draw
 
 用 golang 1.11 module 做项目版本管理
 https://www.jianshu.com/p/c5733da150c6

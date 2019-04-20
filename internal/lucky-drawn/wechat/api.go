@@ -52,7 +52,7 @@ func GetAllData() string {
 	matchedText = strings.ReplaceAll(matchedText, "seajs.use", "")
 	matchedText = strings.ReplaceAll(matchedText, ";", "")
 	logger.Info("Find matched text\n %s", matchedText)
-	filename := path.Join(path.Dir(BASE_DIR), "./users_original.txt")
+	filename := path.Join(path.Dir(BASE_DIR), "/assets/users_original.txt")
 	logger.Info("Save it into file %s", filename)
 	ioutil.WriteFile(filename, []byte(matchedText), 0644)
 	return filename
@@ -65,7 +65,7 @@ func FormatUsersToJson(filename string) string {
 	}
 	jsonUsers := JsonDecode(string(b))
 
-	jsonFilename := path.Join(path.Dir(BASE_DIR), "./users.json")
+	jsonFilename := path.Join(path.Dir(BASE_DIR), "/assets/users.json")
 	logger.Info("Save the formated JSON into file %s", jsonFilename)
 	ioutil.WriteFile(jsonFilename, []byte(jsonUsers), 0644)
 	return jsonFilename

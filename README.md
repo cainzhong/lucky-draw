@@ -1,7 +1,5 @@
 # lucky-draw
 
-[![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://github.com/cainzhong/lucky-draw/blob/master/target/lucky-draw-demo.gif)
-
 <img src="https://github.com/cainzhong/lucky-draw/blob/master/target/lucky-draw-demo.gif" alt="show" />
 
 用 golang 1.11 module 做项目版本管理
